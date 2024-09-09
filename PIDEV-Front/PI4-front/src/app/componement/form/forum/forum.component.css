@@ -1,0 +1,73 @@
+@import 'aos/dist/aos.css';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    margin-bottom : 10%;
+
+  }
+  
+  .logo {
+    text-align: right;
+    padding-right: 20px; /* Adjust as needed */
+    
+  }
+  
+  .logo img {
+    margin-top: 30%;
+    width: 450px; /* Set an exact width for the logo */
+    height: auto; /* Maintain aspect ratio */ 
+   }
+  
+  .content {
+    flex: 2;
+  }
+  h1{
+    margin-top: 5%;
+    font-weight:900;
+  
+    text-align: center;
+    font-size: 3rem;
+  
+  }
+  p{
+    margin-top: 5%;
+    font-weight: normal;
+  
+    text-align: center;
+    font-size: 1.3rem;
+  
+  }
+  @media (max-width: 1400px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5%;
+    }
+    h1{
+      font-weight: bolder;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 30;
+    }
+    p{
+      font-weight: bold;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 15;
+    
+    }}
+    @media (max-width: 700px) {
+      .logo img {
+        width: 300px; /* Set an exact width for the logo */
+        height: auto; /* Maintain aspect ratio */ 
+       }
+       .logo {
+        text-align: right;
+        padding-right: 20px; /* Adjust as needed */
+        
+      }
+      
+    }
+    

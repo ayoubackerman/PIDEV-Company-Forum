@@ -1,0 +1,29 @@
+<div class="billeterie-container">
+  <div class="item-container" *ngFor="let item of items">
+      <div class="img-container">
+          <img  [src]="item.processedImg" alt="Event image">
+      </div>
+
+      <div class="body-container">
+          <div class="overlay"></div>
+
+          <div class="event-info">
+              <p class="title">{{ item.name }}</p>
+              <div class="separator"></div>
+              <p class="info">{{ item.description }}</p>
+              <p class="price">{{ item.quantity }}</p>
+
+              <div class="additional-info">
+                  <p class="info">
+                    <button class=" delete" (click)="deleteItem(item.codeItem)">DELETE</button>
+                    <button class=" update" (click)="openUpdate(item.codeItem)">UPDATE</button>
+                  </p>
+              
+              </div>
+          </div>
+          <button class="action" (click)="openAddItem()"> ADD AN ITEM
+          </button>
+
+      </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+.custom-container {
+    position: fixed;
+    top: 80px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    overflow-y: auto; 
+    max-height: calc(100vh - 80px); 
+}
+
+.custom-card {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    animation-name: cardEntry;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+@keyframes cardEntry {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-body {
+    font-size: 14px; 
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 1rem; 
+}
+
+.btn-favorites {
+    font-size: 18px;
+    color: #dc3545;
+    transition: color 0.3s ease;
+}
+
+.heart-text {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-favorites:hover .heart-text {
+    opacity: 1;
+}
+
+.custom-button {
+    background-color: transparent;
+    border: none;
+    color: #ff2d20;
+    transition: color 0.3s ease;
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.custom-button:hover {
+    background-color: transparent;
+    color: #e6170e;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+}
+
+.text-muted {
+    margin-left: 10px;
+}
+
+.custom-button.retour {
+    color: #007bff;
+    background-color: transparent;
+    border: none;
+}
+
+.custom-button.retour:hover {
+    color: #0056b3;
+}

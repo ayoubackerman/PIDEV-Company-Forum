@@ -1,0 +1,15 @@
+<div class="role-selection-container">
+    <h2>Select your role</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Role</mat-label>
+      <mat-select [(value)]="selectedOption" (selectionChange)="onChange($event)">
+        <mat-option *ngFor="let role of options" [value]="role">{{ role }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button mat-raised-button class="red-button" [disabled]="!selectedOption" (click)="openRoleBasedForm(selectedOption)">
+        Validate
+      </button>
+      
+  </div>
+  

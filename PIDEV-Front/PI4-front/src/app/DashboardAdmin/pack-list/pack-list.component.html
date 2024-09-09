@@ -1,0 +1,9 @@
+<div class="pack-list-container">
+    <h2 class="pack-list-title">List of Packs</h2>
+    <div *ngFor="let pack of packs" class="pack-item">
+      <div>{{ pack.packType }}</div>
+      <div>{{ pack.pricePack }}</div>
+      <button (click)="deletePack(pack.id)">Supprimer</button>
+    </div>
+  </div>
+  

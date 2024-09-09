@@ -1,0 +1,66 @@
+.containerr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  height: 800px;
+  width: 800px;
+  margin-left: 30%;
+
+  background-color: white;
+  padding: 20px; /* Ajouter de l'espace autour du container pour ne pas coller aux bords de l'écran */
+}
+.disabled-button {
+  pointer-events: none; /* Désactive les événements de pointeur */
+  opacity: 0.5; /* Réduit l'opacité pour indiquer qu'il est désactivé */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 10%;
+    margin-left: 18%;
+
+    padding: 20px; /* Ajouter de l'espace autour du container pour ne pas coller aux bords de l'écran */
+  }
+  
+  
+  #canvas-container {
+    text-align: center;
+    width: 100%; /* Ajuster pour occuper toute la largeur disponible */
+  }
+  
+  .selected-info {
+    background-color: #f8f8f8;
+    margin-top: 200px;
+    margin-right: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif; /* Assurez-vous que cela correspond à la police utilisée sur le reste du site */
+    font-size: 14px;
+  }
+  
+  button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkred;
+  }
+  
+  /* Assurez-vous que les éléments sont responsives */
+  @media (max-width: 900px) {
+    .selected-info {
+      margin-top: 100px;
+      margin-left: 20px; /* Ajustement pour les petits écrans */
+    }
+  }
+  

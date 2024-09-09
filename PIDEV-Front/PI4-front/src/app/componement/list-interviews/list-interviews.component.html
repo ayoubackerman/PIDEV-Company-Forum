@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row justify-content-between">
+                <div class="col-sm-6">
+                    <h2>Manage <b>Interviews</b></h2>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Interview Type</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let interview of interviews" >
+                    <td>{{ interview.title }}</td>
+                    <td>{{ interview.type }}</td>
+                    <td>{{ interview.location }}</td>
+                    <td>
+                        <a routerLink="/interview-details/{{interview.codeInterview}}" class="view" data-toggle="tooltip" title="Details">
+                            <i class="material-icons">&#xE417;</i>
+                        </a>
+                        <a  class="delete" data-toggle="modal" 
+                        title="Delete">
+                            <i class="material-icons" data-toggle="tooltip">&#xE872;</i>
+                         </a>
+                        <a  class="edit" data-toggle="modal">
+                            <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                        </a>
+                    </td>
+                </tr>				
+            </tbody>
+        </table>
+    </div>
+</div>

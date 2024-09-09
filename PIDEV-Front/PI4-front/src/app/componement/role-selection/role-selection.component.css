@@ -1,0 +1,60 @@
+/* Base styles for the role selection container */
+.role-selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #ffffff; /* White background */
+  margin-top: 10%;
+  margin-bottom: 10%;
+
+}
+
+/* Red button styles */
+.red-button {
+  background-color: #f44336; /* Red color */
+  color: #ffffff; /* White text */
+}
+
+.red-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+.role-selection-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+button {
+  width: 100%; /* Full-width button */
+  margin-top: 10px;
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 768px) {
+  .role-selection-container {
+    padding: 10px; /* Reduce padding on smaller devices */
+  }
+
+  button {
+    width: 100%; /* Full width for the button */
+  }
+
+  h2 {
+    font-size: 1.2em; /* Slightly smaller heading on small devices */
+  }
+
+  mat-form-field {
+    margin-bottom: 12px; /* Less vertical space between fields */
+  }
+}

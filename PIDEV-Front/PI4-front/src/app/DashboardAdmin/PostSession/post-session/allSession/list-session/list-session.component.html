@@ -1,0 +1,23 @@
+<h2>Items</h2>
+<button routerLink="/dashboard/admin/session" class="btn btn-danger">Add</button>
+
+<div class="session-list">
+    <div *ngFor="let session of sessions" class="session-card">
+        <div class="session-card-front">
+            <img [src]="'data:image/jpeg;base64,' + session.flyer" alt="Flyer" class="session-flyer" />
+        </div>
+        <div class="session-card-back">
+            <div class="session-details">
+                <div class="session-date">{{ session.date }}</div>
+                <div class="session-location">Location: {{ session.location }}</div>
+                <div class="session-duration">Duration: {{ session.duration }}</div>
+                <div class="session-actions">
+                    <button class="btn btn-info" (click)="update(session.id)" >Update</button>
+                    <button (click)="deleteItem(session.id)" class="btn btn-danger">Delete</button>
+                    <button class="btn btn-info" (click)="openAddBid(session.id)">Add Stand</button>
+                    <button class="btn btn-info" (click)="reserver(session.id)">Reserver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

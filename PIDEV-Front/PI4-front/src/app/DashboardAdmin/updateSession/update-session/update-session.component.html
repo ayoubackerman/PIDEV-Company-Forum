@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="table-wrapper">
+      <h2 class="detail-title">Update Session</h2>
+  
+      <form [formGroup]="stepOneForm" (ngSubmit)="addItem()">
+        <div class="container form-container">
+    
+        <div id="form">
+          <div class="file-upload-container">
+            <!-- Section de téléchargement de fichier -->
+          </div>
+
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="datetime-local" id="date" formControlName="date" class="form-control" required>
+           
+        </div>
+    
+        <div class="form-group">
+          <label for="duration">Duration:</label>
+          <input type="text" id="duration" formControlName="duration" class="form-control" required>
+          <mat-error *ngIf="stepOneForm.get('duration')?.hasError('required')">REQUIRED</mat-error>
+         
+      </div>
+      <div class="form-group">
+        <label for="file">Upload Flyer:</label>
+        <input type="file" (change)="onFileSelected($event)" class="form-control">
+        <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview">
+       
+    </div>
+  
+
+  <div class="form-group">
+    <label for="location">Location:</label>
+    <select formControlName="location" class="form-control">
+      <option value="ESB">ESB</option>
+      <option value="ESPRIT">ESPRIT</option>
+      <option value="ESPRIM">ESPRIM</option>
+    </select>
+    <mat-error *ngIf="stepOneForm.get('location')?.hasError('required')">REQUIRED</mat-error>
+    
+</div>
+
+  
+         
+    
+         
+    
+          <div class="form-button-group">
+            <button type="submit" class="btn btn-danger btn-block">
+                <i class="fa fa-plus-circle"></i> Submit
+            </button>     
+           
+        </div> 
+         
+        </div>
+      </div> 
+      </form>
+      <router-outlet></router-outlet>
+  </div>
+</div>

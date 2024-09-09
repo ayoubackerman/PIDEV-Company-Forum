@@ -1,0 +1,19 @@
+<div class="container">
+    <div id="canvas-container">
+      <button (click)="addRectangle('diamond' , $event)">Add Premium</button>
+      <button (click)="addRectangle('gold' , $event)">Add vip</button>
+      <button (click)="addRectangle('gratuit', $event)">Add free</button>
+
+      <button (click)="submitStandsToDatabase()">Submit Stands</button>
+      <canvas id="canvas"></canvas>
+    </div>
+  
+    <div class="selected-info" *ngIf="selectedRectInfo">
+      <div class="info-container">
+        <p><strong>ID:</strong> {{ selectedRectInfo.id }}</p>
+        <p><strong>Type:</strong> {{ selectedRectInfo.type }}</p>
+        <p><strong>Prix:</strong> {{ selectedRectInfo.priceStand }}</p>
+      </div>
+    </div>
+  </div>
+  

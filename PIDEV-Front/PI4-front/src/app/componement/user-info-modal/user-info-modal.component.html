@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Additional Information</h2>
+<mat-dialog-content>
+  <mat-vertical-stepper [linear]="true" #stepper>
+   
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Basic Info</ng-template>
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+        
+        <button mat-button matStepperNext>Next</button>
+      </form>
+    </mat-step>
+   
+
+  </mat-vertical-stepper>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false">Cancel</button>
+  <button mat-button (click)="stepper.reset()">Reset</button>
+  <button mat-button (click)="submitForm()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+</mat-dialog-actions>
+

@@ -1,0 +1,34 @@
+<router-outlet></router-outlet>
+
+  <div class="billeterie-container">
+    <div class="item-container" *ngFor="let auc of auctions">
+        <div class="img-container">
+            <img  [src]="auc.processedImg" alt="Event image">
+        </div>
+  
+        <div class="body-container">
+            <div class="overlay"></div>
+  
+            <div class="event-info">
+                <p class="title">{{ auc.name }}</p>
+                <div class="separator"></div>
+                <p class="info">{{ auc.desc }}</p>
+                <p class="price">END IN:{{auc.endDate}}</p>
+
+               <!-- <p class="price">{{ item.quantity }}</p> -->
+  
+                <div class="additional-info">
+                    <p class="info">
+                
+                        <button class="add" (click)="openBidDetails(auc.codeAuction)">View Details</button>                        
+                    </p>
+                
+                </div>
+            </div>
+            <button class="action" (click)="openAddBid(auc.codeAuction)"> ADD YOUR PRICE
+            </button>
+  
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,48 @@
+
+<body>
+  <div class="container">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-6">
+          <h2>Manage <b>Bid</b></h2>
+        </div>
+        <div class="col-sm-6 text-right">
+          <a (click)="openAddItem()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;
+          </i> <span>Add New Devi</span></a>                  
+      </div>
+      <div class="col-sm-6 text-right">
+          <a (click)="downloadPdf()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;
+          </i> <span>Download PDF</span></a>                  
+      </div>
+              </div>
+          </div>
+          <table class="table table-striped table-hover">
+              <thead>
+          <tr>
+            <th>Descripation</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Your Angular ngFor loop would go here if properly set up -->
+          <tr *ngFor="let dev of Devis">
+            <td>{{ dev.description }}</td>
+           
+            <td>{{ dev.quantity }}</td>
+            <td>{{ dev.price }}</td>
+            <td>
+              <a (click)="deleteItem(dev.id)" class="delete" data-toggle="modal" 
+              title="Delete">
+                  <i class="material-icons" data-toggle="tooltip">&#xE872;</i>
+          </a>
+            </td>        
+          </tr>
+          <!-- End of Angular ngFor loop -->
+        </tbody>
+</table>
+</div>
+</div>
+</body>

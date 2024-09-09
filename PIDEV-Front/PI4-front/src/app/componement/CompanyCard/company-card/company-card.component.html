@@ -1,0 +1,26 @@
+<div class="content">
+    <div *ngFor="let comp of company ">
+
+    <div class="card">
+      <div class="card__side card__side--front">
+        <!-- Front Content -->
+        <div class="card__cont">
+          <img [src]="comp.logo" alt="{{ comp.name }}">
+        </div>
+      </div>
+      <div class="card__side card__side--back">
+        <!-- Back Content -->
+        <div class="card__cta">
+          <p>
+            <br />
+            <span class="space red">{{comp.name}}</span>
+          </p>
+          <p>
+            <span class="space red">{{comp.description}}</span>
+            <br/> 
+          </p>
+        </div>
+    </div>
+
+      </div>
+    </div>

@@ -1,0 +1,38 @@
+<form>
+    <!-- Personal Information -->
+    <h2>Personal Information</h2>
+    <label>Name:</label>
+    <input type="text" name="name" [(ngModel)]="resume.header.name" required>
+    <!-- Add other personal information fields here -->
+  
+    <!-- Education -->
+    <h2>Education</h2>
+    <div *ngFor="let edu of resume.education">
+      <!-- Add fields for education (degree, majors, period, location, GPA) -->
+    </div>
+    <button (click)="addEducation()">Add Education</button>
+  
+    <!-- Experience -->
+    <h2>Experience</h2>
+    <div *ngFor="let exp of resume.experience">
+      <!-- Add fields for experience (company, job role, period, location, responsibilities) -->
+    </div>
+    <button (click)="addExperience()">Add Experience</button>
+  
+    <!-- Skills -->
+    <h2>Skills</h2>
+    <div *ngFor="let skill of resume.skills | keyvalue">
+      <!-- Add fields for skills -->
+    </div>
+    <button (click)="addSkill()">Add Skill</button>
+  
+    <!-- Projects -->
+    <h2>Projects</h2>
+    <div *ngFor="let project of resume.projects">
+      <!-- Add fields for projects (name, description, technology) -->
+    </div>
+    <button (click)="addProject()">Add Project</button>
+  
+    <button type="submit" (click)="onSubmit()">Submit</button>
+  </form>
+  

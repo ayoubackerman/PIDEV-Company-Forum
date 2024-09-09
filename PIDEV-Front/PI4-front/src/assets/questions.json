@@ -1,0 +1,332 @@
+[
+  {
+    "questionId": 1,
+    "question": "Which of the following is correct about TypeScript?", 
+    "options": [
+        {
+            "answer": "Angular is based on TypeScript",
+            "isCorrect": false
+        },
+        {
+            "answer": "This is a superset of JavaScript.",
+            "isCorrect": false
+        },
+        {
+            "answer": "TypeScript is maintained by Microsoft.",
+            "isCorrect": false
+        },
+        {
+            "answer": "All of the above.",
+            "isCorrect": true
+        }
+    ]
+  },
+  {
+    "questionId": 2,
+    "question": "What does AOT stand for?", 
+    "options": [
+        {
+            "answer": "ahead-of-time compilation",
+            "isCorrect": true
+        },
+        {
+            "answer": "Angular Object Templates",
+            "isCorrect": false
+        },
+        {
+            "answer": "Both",
+            "isCorrect": false
+        },
+        {
+            "answer": "None",
+            "isCorrect": false
+        }
+    ]
+  },
+  {
+    "questionId": 3,
+    "question": "Which of the following is not a hook application life cycle?", 
+    "options": [
+        {
+            "answer": "ngOnChanges",
+            "isCorrect": false
+        },
+        {
+            "answer": "ngViewStart",
+            "isCorrect": true
+        },
+        {
+            "answer": "ngOnInit",
+            "isCorrect": false
+        },
+        {
+            "answer": "None of above",
+            "isCorrect": false
+        }
+    ]
+  },
+  {
+    "questionId": 4,
+    "question": "What is the decorator used for configuring your module class", 
+    "options": [
+        {
+            "answer": "@NgApp",
+            "isCorrect": false
+        },
+        {
+            "answer": "@NgModule",
+            "isCorrect": true
+        },
+        {
+            "answer": "Both",
+            "isCorrect": false
+        },
+        {
+            "answer": "None of above",
+            "isCorrect": false
+        }
+    ]
+  },
+  {
+    "questionId": 5,
+    "question": "Router is part of which of the following module", 
+    "options": [
+        {
+            "answer": "@angular/core",
+            "isCorrect": false
+        },
+        {
+            "answer": "@angular/router",
+            "isCorrect": true
+        },
+        {
+            "answer": "Both",
+            "isCorrect": false
+        },
+        {
+            "answer": "None of above",
+            "isCorrect": false
+        }
+    ]
+  },
+  {
+    "questionId": 6,
+    "question": "What is the purpose of the 'async' keyword in JavaScript/TypeScript?",
+    "options": [
+      {
+        "answer": "To declare a variable as asynchronous.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To define a function that returns a Promise.",
+        "isCorrect": true
+      },
+      {
+        "answer": "To create an asynchronous loop.",
+        "isCorrect": false
+      },
+      {
+        "answer": "None of the above.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 7,
+    "question": "What does CORS stand for?",
+    "options": [
+      {
+        "answer": "Cross-Origin Resource Sharing",
+        "isCorrect": true
+      },
+      {
+        "answer": "Cross-Origin Request Security",
+        "isCorrect": false
+      },
+      {
+        "answer": "Cross-Origin Response Standard",
+        "isCorrect": false
+      },
+      {
+        "answer": "Common Origin Resource Sharing",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 8,
+    "question": "In Angular, what is the purpose of the ActivatedRoute?",
+    "options": [
+      {
+        "answer": "To provide access to the Angular HTTP client.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To represent the route associated with a component.",
+        "isCorrect": true
+      },
+      {
+        "answer": "To manage animations in the application.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To handle authentication and authorization.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 9,
+    "question": "What is the purpose of ng-content in Angular?",
+    "options": [
+      {
+        "answer": "To define the content of a template.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To project content into a component's view.",
+        "isCorrect": true
+      },
+      {
+        "answer": "To handle navigation in Angular applications.",
+        "isCorrect": false
+      },
+      {
+        "answer": "None of the above.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 10,
+    "question": "What is the role of a service in Angular?",
+    "options": [
+      {
+        "answer": "To define the structure of a component.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To handle data and business logic shared between components.",
+        "isCorrect": true
+      },
+      {
+        "answer": "To manage the application's routes.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To create reusable templates.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 11,
+    "question": "What is the purpose of the Angular CLI?",
+    "options": [
+      {
+        "answer": "To provide an integrated development environment for Angular applications.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To generate, build, and test Angular projects with ease.",
+        "isCorrect": true
+      },
+      {
+        "answer": "To manage version control for Angular applications.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To create graphical user interfaces for Angular applications.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 12,
+    "question": "What is the purpose of ngIf in Angular?",
+    "options": [
+      {
+        "answer": "To loop through an array and render items in the view.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To conditionally render or hide elements based on a boolean expression.",
+        "isCorrect": true
+      },
+      {
+        "answer": "To define a service in Angular.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To handle HTTP requests in Angular applications.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 13,
+    "question": "What is Angular Ivy?",
+    "options": [
+      {
+        "answer": "A new version of the Angular framework.",
+        "isCorrect": false
+      },
+      {
+        "answer": "A rendering engine and view engine for Angular.",
+        "isCorrect": true
+      },
+      {
+        "answer": "An official Angular code editor.",
+        "isCorrect": false
+      },
+      {
+        "answer": "An alternative to Angular services.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 14,
+    "question": "What is the purpose of the ngClass directive in Angular?",
+    "options": [
+      {
+        "answer": "To create custom Angular components.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To apply or remove CSS classes conditionally based on expressions.",
+        "isCorrect": true
+      },
+      {
+        "answer": "To handle form validations in Angular applications.",
+        "isCorrect": false
+      },
+      {
+        "answer": "To define routing configurations in Angular.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "questionId": 15,
+    "question": "What is Angular Universal?",
+    "options": [
+      {
+        "answer": "A code editor for Angular applications.",
+        "isCorrect": false
+      },
+      {
+        "answer": "A framework for building server-side rendered Angular applications.",
+        "isCorrect": true
+      },
+      {
+        "answer": "An alternative to Angular services.",
+        "isCorrect": false
+      },
+      {
+        "answer": "A tool for managing state in Angular applications.",
+        "isCorrect": false
+      }
+    ]
+  }
+]

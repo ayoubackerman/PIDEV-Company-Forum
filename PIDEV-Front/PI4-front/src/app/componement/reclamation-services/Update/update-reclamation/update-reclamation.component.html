@@ -1,0 +1,53 @@
+<div class="container">
+  <h3 class="h3 mb-3 fw-normal">Update RECLAMATION</h3>
+  <form [formGroup]="itemForm" (ngSubmit)="updateItem()">
+    <div id="form">
+      <div class="row">
+        <div class="col-6" *ngIf="!hideCodeReclamation">
+          <div class="form-floating">
+            <input matInput formControlName="codeReclamation" placeholder="codeReclamation">
+            <mat-error *ngIf="itemForm.get('codeReclamation')?.hasError('required')">
+              This input is required!
+            </mat-error>
+          </div>
+        </div>
+        
+        <div class="col-6">
+          <div class="form-floating">
+            <input matInput formControlName="description" placeholder="Description">
+            <mat-error *ngIf="itemForm.get('description')?.hasError('required')">
+              This input is required!
+            </mat-error>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-floating">
+            <input matInput formControlName="status" placeholder="Status">
+            <mat-error *ngIf="itemForm.get('status')?.hasError('required')">
+              This input is required!
+            </mat-error>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-floating">
+            <input matInput formControlName="date" type="date" placeholder="Date">
+            <mat-error *ngIf="itemForm.get('date')?.hasError('required')">
+              This input is required!
+            </mat-error>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-floating">
+            <input matInput formControlName="type" type="text" placeholder="Type">
+            <mat-error *ngIf="itemForm.get('type')?.hasError('required')">
+              This input is required!
+            </mat-error>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-lg btn-primary" type="submit">Update</button>
+  </form>
+</div>

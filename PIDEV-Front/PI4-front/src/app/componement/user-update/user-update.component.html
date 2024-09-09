@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">Update User</div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="user.username" disabled />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="user.email" />
+      </div>
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" />
+      </div>
+      <!-- <div class="form-group">
+        <label for="enabled">Enabled:</label>
+        <input type="checkbox" class="form-control" id="enabled" [(ngModel)]="user.enabled" />
+      </div> -->
+      <button class="btn btn-primary" (click)="onSubmit()">Update</button>
+    </div>
+  </div>
+  

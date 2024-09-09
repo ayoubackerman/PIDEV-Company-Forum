@@ -1,0 +1,253 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+ 
+
+
+
+ 
+
+  
+<body>
+
+
+
+
+    <div class="main">
+
+
+        <div class="left">
+
+            <div class="img">
+                <img src="assets/image/profile.png">
+                <p>John Deo</p>
+            </div>
+
+            <div class="img">
+                <img src="assets/image/friend.png">
+                <p>Friends</p>
+            </div>
+
+            <div class="img">
+                <img src="assets/image/saved.png">
+                <p>Saved</p>
+            </div>
+
+            <div class="img">
+                <img src="assets/image/group.png">
+                <p>Groups</p>
+            </div>
+
+            <div class="img">
+                <img src="assets/image/marketplace.png">
+                <p>Marketplace</p>
+            </div>
+
+            <div class="img">
+                <img src="assets/image/watch.png">
+                <p>Watch</p>
+            </div>
+
+            <div class="img">
+                <img src="assets/image/down_arrow.png">
+                <p>See more</p>
+            </div>
+
+           
+
+            
+        </div>
+
+
+
+        <div class="center">
+
+            
+          <div class="page-center">
+            <div class="container dark-mode">
+              <div class="input-trigger flex-1" style="width: 570px" (click)="openDialog()">
+                  <div class="py-2.5 text-center"> What do you have in mind? </div>
+              </div>
+              <div class="icon-wrapper bg-sky fill-sky" uk-toggle="target: #create-status">
+                <i class="fa-solid fa-video"></i>  
+              </div>
+              <div class="icon-wrapper bg-pink fill-pink" uk-toggle="target: #create-status">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+            </div>
+          </div>
+
+
+
+            
+
+            <div class="friends_post"*ngFor =" let item of items">
+
+                <div class="friend_post_top">
+
+                    <div class="img_and_name">
+
+                        <img src="assets/image/post_1.jpg">
+
+                        <div class="friends_name">
+                            <p class="friends_name" > 
+                                
+                            </p>
+                            {{item.author}}
+                            <p class="time">{{ item.datepost | date:'dd-MM-yyyy' }}<i class="fa-solid fa-user-group"></i></p>
+                        </div>
+                        
+
+                    </div>
+
+                    <div class="menu">
+
+                      <button  class="btn custom-button" (click)="deletePost(item.codepost)"data-toggle="tooltip" title="Delete">
+                        <i class="fa fa-trash text-danger"></i>
+                      </button>
+
+                    </div>
+
+                </div>
+                <p><strong>Title:</strong>{{item.title}}</p>
+                
+                {{item.description}}
+
+                <img [src]="'data:image/jpeg;base64,' + item.imagepost"
+                alt="Université Image">
+
+                <div class="info">
+
+                   
+
+                    <div class="comment">
+                        <button  (click)="comment(item.codepost)"></button>
+                       
+                       
+                    </div>
+
+                </div>
+
+               
+                <div class="like">
+
+                    <div class="like_icon">
+                        <i class="fa-solid fa-thumbs-up activi"></i>
+                        <p>Like</p>
+                    </div>
+                    <button class="btn custom-button" (click)="comment(item.codepost)" data-toggle="tooltip" title="Edit Offer">
+                       
+                    <div class="like_icon">
+                        <i class="fa-solid fa-message"></i>
+                        <p> comments  </p>
+                    </div>
+                  </button>
+                    <div class="like_icon">
+                        <i class="fa-solid fa-share"></i>
+                        <p>Share</p>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="comment_warpper">
+
+                    <img src="assets/image/profile.png">
+                    <div class="circle"></div>
+
+                    <div class="comment_search">
+
+                        <input type="text" placeholder="Write a comment"[disabled]="item.comf" (click)="updateItem(item.codepost)">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <i class="fa-solid fa-camera"></i>
+                        <i class="fa-regular fa-note-sticky"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="loard">
+                <button>Loard More</button>
+            </div>
+
+            <p class="end">2024 © All Rights Reserved <span><i class="fa-regular fa-face-grin"></i>
+                Created By ESPRIT</span></p>
+
+
+        </div>
+
+    
+
+        <div class="right">
+            
+            <div class="first_warpper">
+
+               
+
+                <div class="page_img">
+                    <img src="assets/image/page.jpg">
+                    <p>Web Designer</p>
+                </div>
+
+                <div class="page_icon">
+                    <i class="fa-regular fa-bell"></i>
+                    <p>20 Notifications</p>
+                </div>
+
+                <div class="page_icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <p>Create promotion</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+          
+
+
+            <div class="third_warpper">
+
+                <div class="contact_tag">
+
+                    <h2>Contacts</h2>
+
+                    <div class="contact_icon">
+
+                        <i class="fa-solid fa-video"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="contact">
+
+                    <img src="assets/image/contact_1.jpg">
+                    <p>Senuda De Silva</p>
+
+                </div>
+
+             
+
+              
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+</body>

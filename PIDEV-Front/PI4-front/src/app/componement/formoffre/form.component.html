@@ -1,0 +1,67 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+  
+<body>
+  <div class="container">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-6">
+          <h2>Manage <b>Offers</b></h2>
+        </div>
+                  <div class="col-sm-6 text-right"> 
+                      <!--<a href="/add-form" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Offer</span></a>                  
+                  </div>
+              </div>
+          </div>
+          <table class="table table-striped table-hover">
+              <thead>
+                  <tr>
+                      <th>Reference</th>
+                      <th>Title</th>
+                      <th>Location</th>
+                      <th>Description</th>
+                      <th>Deadline</th>
+                      <th>contratType</th>
+                      <th>Skills</th>
+                      <th>Experience Level</th>
+                      <th>Actions</th> $
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let offre of offres">
+                      <td>{{ offre.reference }}</td>
+                      <td>{{ offre.title }}</td>
+                      <td>{{ offre.location }}</td>
+                      <td>{{ offre.description }}</td>
+                      <td>{{ offre.deadline }}</td>
+                      <td>{{ offre.contratType }}</td>
+                      <td>{{ offre.skills }}</td>
+                      <td>{{ offre.experienceLevel }}</td>
+                      <td>
+                          <button class="btn edit-delete-button" (click)="deleteOffre(offre.reference)">
+                              <i class="material-icons text-danger" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                          </button>
+                          <a [routerLink]="['/edit-form', offre.reference]" class="edit edit-delete-button" data-toggle="modal">
+                              <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                          </a>
+                      </td>                                                                                        
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</body>
+</html>-->

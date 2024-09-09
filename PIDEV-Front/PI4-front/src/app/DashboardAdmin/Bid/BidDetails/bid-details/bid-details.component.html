@@ -1,0 +1,37 @@
+
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+          </div>
+                    <div class="col-sm-6 text-right"> <!-- Alignement à droite -->
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Supplyer Name</th>
+              <th>Price</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Your Angular ngFor loop would go here if properly set up -->
+            <tr *ngFor="let bid of Bids">
+              <td>{{ bid.nameitem }}</td>
+              <td>{{ bid.name }}</td>
+              <td>{{ bid.amount }}</td>
+              <td>{{bid.date}}</td>
+               
+            </tr>
+            <!-- End of Angular ngFor loop -->
+          </tbody>
+  </table>
+  </div>
+  </div>
+  </body>
+  

@@ -1,0 +1,77 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+<form [formGroup]="offreForm" (ngSubmit)="addItem()" class="form-container">
+    
+    <h2 class="form-title">Add an Offer</h2>
+    <input type="hidden" formControlName="favorite" value="false">
+
+    <div class="form-group">
+        <label for="reference">Reference:</label>
+        <input type="text" id="reference" formControlName="reference" class="form-control" required>
+        <div *ngIf="offreForm.get('reference')?.touched && offreForm.get('reference')?.invalid" class="text-danger">
+            Reference is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="title">Title:</label>   
+        <input type="text" id="title" formControlName="title" class="form-control" required>
+        <div *ngIf="offreForm.get('title')?.touched && offreForm.get('title')?.invalid" class="text-danger">
+            Title is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" formControlName="location" class="form-control" required>
+        <div *ngIf="offreForm.get('location')?.touched && offreForm.get('location')?.invalid" class="text-danger">
+            Location is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description" class="form-control" required></textarea>
+        <div *ngIf="offreForm.get('description')?.touched && offreForm.get('description')?.invalid" class="text-danger">
+            Description is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="deadline">Deadline:</label>
+        <input type="date" id="deadline" formControlName="deadline " class="form-control" required>
+        <div *ngIf="offreForm.get('deadline')?.touched && offreForm.get('deadline')?.invalid" class="text-danger">
+            Deadline is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contratType">Contract Type:</label>
+        <select id="contratType" formControlName="contratType" class="form-control" required>
+            <option *ngFor="let type of contratTypes" [value]="type">{{type}}</option>
+        </select>
+        <div *ngIf="offreForm.get('contratType')?.touched && offreForm.get('contratType')?.invalid" class="text-danger">
+            Contract Type is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="skills">Skills:</label>
+        <input type="text" id="skills" formControlName="skills" class="form-control" required>
+        <div *ngIf="offreForm.get('skills')?.touched && offreForm.get('skills')?.invalid" class="text-danger">
+            Skills are required.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="experienceLevel">Experience Level:</label>
+        <select id="experienceLevel" formControlName="experienceLevel" class="form-control" required>
+            <option *ngFor="let level of experienceLevels" [value]="level">{{level}}</option>
+        </select>
+        <div *ngIf="offreForm.get('experienceLevel')?.touched && offreForm.get('experienceLevel')?.invalid" class="text-danger">
+            Experience Level is required.
+        </div>
+    </div>
+    <div class="form-button-group">
+        <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa fa-plus-circle"></i> Add
+        </button>     
+<button type="button" class="btn btn-danger" (click)="cancelAdd()">
+    <i class="fa fa-reply"></i> Return
+    </button>
+    </div> 
+</form>

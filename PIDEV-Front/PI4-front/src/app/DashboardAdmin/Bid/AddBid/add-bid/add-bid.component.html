@@ -1,0 +1,19 @@
+<div mat-dialog-title>
+    <h5>Add a price</h5>
+</div>
+<form [formGroup]="BifForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content>
+    <div class="row" >
+        <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="amount">
+    </mat-form-field>
+    </div>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button class="red-button" (click)="closeDialog()" type="button">Cancel</button>
+    <button mat-raised-button type="submit">save</button>
+
+</div>
+</form>

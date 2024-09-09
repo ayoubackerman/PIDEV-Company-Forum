@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="table-wrapper">
+      <h2 class="detail-title">Book a Reservation</h2>
+  
+      <form [formGroup]="ReservationForm" (ngSubmit)="addItem()" class="form">
+        <div class="container form-container">
+  
+
+          <div class="form-group">
+            <label for="packType">Email</label>
+            <input type="email" formControlName="email" placeholder="Email" class="form-control" [(ngModel)]="email">
+      
+        </div>
+    
+        <div class="form-group">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Select a pack</mat-label>
+            <mat-select formControlName="packList" name="packList" [(ngModel)]="selectedPack">
+              <mat-option *ngFor="let pack of packList" [value]="pack">
+                {{ pack.packType + " " + pack.pricePack }}
+              </mat-option>
+            </mat-select> 
+            <mat-error *ngIf="ReservationForm.get('packList')?.hasError('required')">
+              Pack selection is required
+            </mat-error>
+          </mat-form-field>
+         
+        </div>
+  
+
+  
+          <div class="form-button-group">
+            <button type="button" class="btn btn-danger" (click)="stand()">
+              <i class="fa fa-reply"></i> Select Stand
+          </button> 
+           
+        </div> 
+         
+        </div>
+      
+      </form>
+      <router-outlet></router-outlet>
+  </div>
+</div>

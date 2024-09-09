@@ -1,0 +1,158 @@
+<div class="container mt-5 pt-4">
+  <div class="row">
+    <div class="search-history-sidebar col-lg-3 col-md-4 col-sm-12">
+      <div class="search-wrapper">
+        <input type="text" class="form-control" placeholder="Search by Title" (keydown)="handleKeyDown($event)">
+        <i class="fas fa-search search-icon"></i>
+      </div>
+      <h5 class="mb-3">Search History</h5>
+     <ul class="list-group" *ngIf="searchHistory.length > 0">
+      <li *ngFor="let historyItem of searchHistory" class="list-group-item" (click)="navigateToOffer(historyItem.keyword)">
+        {{ historyItem.keyword }}
+        <span class="badge bg-primary rounded-pill" (click)="clearSearchHistory(historyItem)">Clear</span>
+      </li>
+</ul>
+<button class="btn btn-sm btn-light mt-3" (click)="clearSearchHistoryAll()">Clear All</button>
+    </div>
+    
+    <div class="col-lg-9 col-md-8 col-sm-12">
+  <button type="button" class="btn btn-primary custom-button" data-bs-toggle="modal" data-bs-target="#addOfferModal">
+      <i class="fas fa-plus-circle"></i> Add an Offer
+  </button>
+  <button class="btn btn-success custom-button" (click)="navigateToFavorites()">
+      <i class="fas fa-heart"></i> Go to Favorites
+  </button>
+  <button class="btn btn-custom custom-button" (click)="exportToExcel()" title="View Offers in Excel">
+    <i class="fa fa-file-excel"></i> View Offers in Excel
+</button> 
+<div class="search-wrapper">
+  <input
+  type="text"
+  class="form-control"
+  placeholder="Search by Title"
+  (keydown)="handleKeyDown($event)"
+>
+  <i class="fas fa-search search-icon"></i>
+</div>
+<p>{{ filteredOffres.length }} offers found</p>  
+<div class="toggle-button-group">
+  <button type="button" class="btn btn-toggle active" (click)="filterOffers('all')">
+    Tous
+  </button>
+  <button type="button" class="btn btn-toggle" (click)="filterOffers('new')">
+    Nouveaux
+  </button>
+</div>
+
+
+
+   <!-- Liste des offres filtrées -->
+   <div class="row">
+    <div *ngFor="let offre of filteredOffres.slice(0, showAllOffers ? filteredOffres.length : 6)" class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+      <!-- Display offer details -->
+      <div class="card border-0 bg-light rounded shadow">
+        <div class="card-body p-4">
+          <span class="badge rounded-pill bg-primary float-md-end mb-3 mb-sm-0">{{ offre.contratType }}</span>
+          <h5>{{ offre.title }}</h5>
+          <div class="mt-3">
+            <span class="text-muted d-block"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ offre.location }}</span>
+            <span class="text-muted d-block"><i class="fa fa-calendar" aria-hidden="true"></i> Publication Date: {{ offre.publicationDate | date }}</span>
+          </div>
+          <div class="mt-3">
+            <a routerLink="/detailoffer" class="btn btn-primary" (click)="showDetails(offre)">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Show more offers button -->
+  <div class="text-center mt-3">
+    <button *ngIf="filteredOffres.length > 6" class="btn btn-primary custom-button" (click)="toggleAllOffers()">
+      <span *ngIf="!showAllOffers">See More Offers</span>
+      <span *ngIf="showAllOffers">Hide Additional Offers</span>
+      <i class="fas fa-chevron-down"></i> 
+    </button>
+  </div>
+    <div class="modal fade" id="addOfferModal" tabindex="-1" role="dialog" aria-labelledby="AddOfferModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form [formGroup]="offreForm" (ngSubmit)="addItem()" class="modal-body">
+            <form [formGroup]="offreForm" (ngSubmit)="addItem()" class="form-container">
+              <div class="form-group">
+                  <label for="reference">Reference:</label>
+                  <input type="text" id="reference" formControlName="reference" class="form-control" required>
+                  <div *ngIf="offreForm.get('reference')?.touched && offreForm.get('reference')?.invalid" class="text-danger">
+                      Reference is required.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" formControlName="title" class="form-control" required>
+                  <div *ngIf="offreForm.get('title')?.touched && offreForm.get('title')?.invalid" class="text-danger">
+                      Title is required.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="location">Location:</label>
+                  <input type="text" id="location" formControlName="location" class="form-control" required>
+                  <div *ngIf="offreForm.get('location')?.touched && offreForm.get('location')?.invalid" class="text-danger">
+                      Location is required.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="description">Description:</label>
+                  <textarea id="description" formControlName="description" class="form-control" required></textarea>
+                  <div *ngIf="offreForm.get('description')?.touched && offreForm.get('description')?.invalid" class="text-danger">
+                      Description is required.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="deadline">Deadline:</label>
+                  <input type="date" id="deadline" formControlName="deadline" class="form-control" required>
+                  <div *ngIf="offreForm.get('deadline')?.touched && offreForm.get('deadline')?.invalid" class="text-danger">
+                      Deadline is required.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="contratType">Contract Type:</label>
+                  <select id="contratType" formControlName="contratType" class="form-control" required>
+                      <option *ngFor="let type of contratTypes" [value]="type">{{type}}</option>
+                  </select>
+                  <div *ngIf="offreForm.get('contratType')?.touched && offreForm.get('contratType')?.invalid" class="text-danger">
+                      Contract Type is required.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="skills">Skills:</label>
+                  <input type="text" id="skills" formControlName="skills" class="form-control" required>
+                  <div *ngIf="offreForm.get('skills')?.touched && offreForm.get('skills')?.invalid" class="text-danger">
+                      Skills are required.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="experienceLevel">Experience Level:</label>
+                  <select id="experienceLevel" formControlName="experienceLevel" class="form-control" required>
+                      <option *ngFor="let level of experienceLevels" [value]="level">{{level}}</option>
+                  </select>
+                  <div *ngIf="offreForm.get('experienceLevel')?.touched && offreForm.get('experienceLevel')?.invalid" class="text-danger">
+                      Experience Level is required.
+                  </div>
+              </div>
+              <div class="form-button-group">
+                  <button type="submit" class="btn btn-primary btn-block">
+                      <i class="fa fa-plus-circle"></i> Add
+                  </button>     
+          <button type="button" class="btn btn-danger" (click)="cancelAdd()">
+              <i class="fa fa-reply"></i> Return
+              </button>
+              </div> 
+          </form>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+ 

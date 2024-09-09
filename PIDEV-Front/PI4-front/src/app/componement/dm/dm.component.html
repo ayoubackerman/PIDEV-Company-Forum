@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="table-wrapper">
+    <form (submit)="analyzeSentiment()">
+      <div class="form-group">
+        <label for="reviewInput">Review:</label>
+        <input type="text" id="reviewInput" class="form-control" [(ngModel)]="reviewText" name="reviewText" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Analyze Sentiment</button>
+    </form>
+  
+    <div *ngIf="result" class="mt-3">
+      <p>Result: {{ result | json }}</p>
+    </div>  
+  
+    <form (submit)="analyzeDomain()">
+      <div class="form-group">
+        <label for="niveauEtudeInput">Niveau d'Etude:</label>
+        <input type="number" id="niveauEtudeInput" class="form-control" [(ngModel)]="niveauEtude" name="niveauEtude" required>
+      </div>
+      <div class="form-group">
+        <label for="competencesInput">Competences:</label>
+        <input type="text" id="competencesInput" class="form-control" [(ngModel)]="competences" name="competences" placeholder="Enter competences separated by commas" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Analyze Domain</button>
+    </form>
+    <div *ngIf="domainResult" class="mt-3">
+      <p>Result: {{ domainResult | json }}</p>
+    </div>
+  </div>
+  </div>
+  

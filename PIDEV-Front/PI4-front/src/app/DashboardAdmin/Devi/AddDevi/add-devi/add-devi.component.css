@@ -1,0 +1,36 @@
+.container {
+    max-width: 90%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(19px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+}
+
+.h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    font-family: Arial Rounded MT;
+    width: 100%;
+    background-color: red;
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 20px;
+    color: white;
+}
+
+.mat-form-field {
+    width: 100%; /* Ensure full width within column */
+    background-color: transparent; /* Maintains consistency with popup style */
+}
+
+input {
+    color: black;
+    font-size: 16px;
+}

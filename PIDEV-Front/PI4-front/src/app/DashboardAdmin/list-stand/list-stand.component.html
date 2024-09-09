@@ -1,0 +1,18 @@
+<div class="containerr">
+
+<div class="container">
+  <div id="canvas-container">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="selected-info" *ngIf="selectedStand">
+    <div class="info-container">
+      <p><strong>ID:</strong> {{ selectedStand?.id }}</p>
+      <p><strong>Prix:</strong> {{ selectedStand?.price }}</p>
+      <button type="button" (click)="openConfirmationDialog()" [ngClass]="{ 'disabled-button': selectedStand.reserved === 1 }">Réserver</button>
+
+    </div>
+  </div>
+</div>
+</div>
+

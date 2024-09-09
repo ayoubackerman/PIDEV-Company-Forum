@@ -1,0 +1,30 @@
+    <div class="content">
+    <div *ngFor="let comp of companies ">
+
+    <div class="card">
+      <div class="card__side card__side--front">
+        <!-- Front Content -->
+        <div class="card__cont">
+            <img src="assets/logo.PNG" alt="">
+          <span class="blue">{{comp.name}}</span>
+        </div>
+      </div>
+      <div class="card__side card__side--back">
+        <!-- Back Content -->
+        <div class="card__cta">
+            <p>           <span class="space red">First Name</span>
+            <span class="cyan">:</span> <span class="green">{{comp.firstName}}</span>
+            <br />
+            <span class="space red">Last Name</span>
+            <span class="cyan">:</span> <span class="green">{{comp.lastName}}</span>
+            <br/>
+            <span class="space red">Email</span>
+            <span class="cyan">:</span> <span class="green">{{comp.email}}</span>
+            <br/>
+            
+          </p>
+        </div>
+    </div>
+
+      </div>
+    </div>

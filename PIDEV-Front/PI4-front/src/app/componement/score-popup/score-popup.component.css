@@ -1,0 +1,36 @@
+/* score-popup.component.css */
+
+:host {
+    display: block;
+    text-align: center;
+  }
+  
+  .dialog-container {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333; /* Couleur du texte */
+  }
+  
+  p {
+    margin: 10px 0;
+    color: #555; /* Couleur du texte */
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Couleur de fond du bouton (vert) */
+    color: #fff; /* Couleur du texte du bouton (blanc) */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Couleur de fond du bouton au survol */
+  }
+  

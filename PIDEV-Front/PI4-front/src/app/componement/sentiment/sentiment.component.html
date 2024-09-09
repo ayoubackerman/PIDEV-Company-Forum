@@ -1,0 +1,16 @@
+
+  <div class="container">
+    <div class="table-wrapper">
+    <form (submit)="onPredict()">
+      <div class="form-group">
+        <label for="reviewInput">Reclamation:</label>
+        <input type="text" id="text" class="form-control" [(ngModel)]="text" name="text" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Analyze Sentiment</button>
+    </form>
+  
+    <div *ngIf="sentiment" class="mt-3">
+      <p>Result: {{ sentiment | json }}</p>
+    </div> 
+    </div>
+  

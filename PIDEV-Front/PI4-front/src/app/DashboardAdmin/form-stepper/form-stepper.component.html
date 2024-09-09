@@ -1,0 +1,22 @@
+<div class="container">
+
+<mat-vertical-stepper [linear]="true" #stepper>
+    <ng-container *ngIf="stepperForm" [formGroup]="stepperForm">
+        
+      <mat-step *ngFor="let group of stepperForm.controls | keyvalue; let i = index" [formGroupName]="group.key">
+        <ng-template matStepLabel>{{ i === 0 ? 'Informations personnelles' : i === 1 ? 'Informations de contact' : 'Adresse' }}</ng-template>
+        <mat-form-field *ngIf="group.key === 'personalInfo'">
+          <input matInput formControlName="firstName" placeholder="Prénom">
+        </mat-form-field>
+  
+        <!-- Ajoutez les autres champs de formulaire pour les autres étapes -->
+  
+        <div>
+          <button mat-button *ngIf="!isFirstStep(i)" (click)="previous(stepper)">Précédent</button>
+          <button mat-button *ngIf="isLastStep(i)" (click)="onSubmit()">Soumettre</button>
+          <button mat-button *ngIf="!isLastStep(i)" (click)="next(stepper)">Suivant</button>
+        </div>
+      </mat-step>
+    </ng-container>
+  </mat-vertical-stepper>
+  

@@ -1,0 +1,109 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/pidev?createDatabaseIfNotExist=true
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+logging:
+  level:
+    org:
+      springframework: WARN
+    com:
+      zaxxer:
+        hikari: WARN
+    root: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %-5level - %logger{36} - %msg%n"
+
+server:
+  port: 9090
+springdoc:
+  api-docs:
+    enabled: false
+---
+
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hassen.kekli@esprit.tn
+    password: gqoc vmfl hitx dcio
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+      max-request-size: 10MB
+  application:
+    name: pidev
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+        issuer-uri : http://localhost:8080/realms/Pi-Dev
+      client:
+        authority-mapping:
+          ROLE_USER: ROLE_USER
+          ROLE_ADMIN: ROLE_ADMIN
+        provider:
+          oidc:
+            issuer-uri: http://localhost:8080/realms/Pi-Dev
+            authorization-uri: http://localhost:8080/realms/Pi-Dev/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/realms/Pi-Dev/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/realms/Pi-Dev/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/realms/Pi-Dev/protocol/openid-connect/certs
+        registration:
+          oidc:
+            client-id: pidev-client-ang
+            client-secret:
+            scope: openid, profile, email, offline_access # last one for refresh tokens
+keycloak:
+  realm: Pi-Dev
+  resource: pidev-client-ang
+  auth-server-url: http://localhost:8080/
+  credentials:
+    secret:
+  ssl-required: external
+  use-resource-role-mappings: true
+  bearer-only: true
+  public-client: true
+  cors: true
+  principal-attribute: admin
+
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: true
+
+springdoc:
+  show-actuator: true
+
+# Properties to be exposed on the /info management endpoint
+info:
+  # Comma separated list of profiles that will trigger the ribbon to show
+  display-ribbon-on-profiles: 'dev'
+
+
+
+app:
+  firebase-configuration-file: push-notification-f2e9a-firebase-adminsdk-s009o-baed28ce8e.json
+
+openai:
+  model: gpt-3.5-turbo
+  api:
+    url: https://api.openai.com/v1/chat/completions
+    key: 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

@@ -1,0 +1,44 @@
+
+<body>
+  <div class="container">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-6">
+          <h2>Manage <b>Bid</b></h2>
+        </div>
+                  <div class="col-sm-6 text-right"> <!-- Alignement à droite -->
+                  </div>
+              </div>
+          </div>
+          <table class="table table-striped table-hover">
+              <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Image</th>
+            <th>Supplyer Name</th>
+            <th>Price</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Your Angular ngFor loop would go here if properly set up -->
+          <tr *ngFor="let bid of Bids">
+            <td>{{ bid.nameitem }}</td>
+            <td>
+              <img [src]="bid.processedImg" alt="product-image" style="max-width: 100px; max-height: 100px;" />
+            </td>
+            <td>{{ bid.name }}</td>
+            <td>{{ bid.amount }}</td>
+            <td>
+              <button class="action-button" (click)="performAction(bid.codeBid)">
+                <img src="../../../../assets/correct.png" alt="Correct Image" style="width: 20px; height: 20px;">
+              </button>
+            </td>        
+          </tr>
+          <!-- End of Angular ngFor loop -->
+        </tbody>
+</table>
+</div>
+</div>
+</body>

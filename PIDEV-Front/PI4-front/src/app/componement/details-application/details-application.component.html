@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="table-wrapper">
+        <h2 class="detail-title">Application Details</h2>
+    
+        <div class="detail-group">
+            <label>Contact:</label>
+            <p>{{ application.contact }}</p>
+        </div>
+        
+        <div class="detail-group">
+            <label>Portfolio:</label>
+            <p>{{ application.portfolio }}</p>
+        </div>
+        
+        <div class="detail-group">
+            <label>Status:</label>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped"
+                 [style.width.%]="getProgressBarDetails(application.status).progress"
+                  [style.background-color]="getProgressBarDetails(application.status).color"
+                   aria-valuemin="0" aria-valuemax="100" role="progressbar">{{ application.status }}</div>
+            </div>
+        </div>
+        
+        <div class="detail-group">
+            <label>Date:</label>
+            <p>{{ application.date | date }}</p>
+        </div>
+        
+        <div class="form-button-group">
+            <button type="submit" class="btn btn-primary btn-block float-right" (click)="cancelAdd()">
+                <i class="fa fa-reply"></i> Back
+            </button>     
+        </div> 
+    </div>
+</div>

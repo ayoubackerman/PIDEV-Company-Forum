@@ -1,0 +1,87 @@
+#navbar {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+.login-button {
+  background-color: red; /* Red background */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Adjust padding if needed */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: darkred; /* Darker shade on hover */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px; /* Increased padding */
+}
+
+.logo img {
+  height: 60px; /* Increased logo size */
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 12px 20px; /* Increased padding */
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem; /* Increased font size */
+}
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px; /* Increased padding */
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 70px; /* Adjusted based on increased navbar height */
+    left: 0;
+    background: #fff;
+  }
+
+  .navigation.is-open {
+    display: flex;
+  }
+}

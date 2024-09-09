@@ -1,0 +1,17 @@
+/* Styling for the buttons */
+button {
+    display: inline-block;
+    padding: 10px 20px; /* Padding for the buttons */
+    margin: 5px; /* Add margin between buttons */
+    border: none;
+    background-color: red; /* Blue background color */
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for the background color */
+}
+
+/* Styling for the buttons on hover */
+button:hover {
+    background-color: red; /* Darker blue color on hover */
+}

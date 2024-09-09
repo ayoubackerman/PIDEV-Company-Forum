@@ -1,0 +1,100 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #2a2a2a;
+  --bg-slate-light: #f1f5f9;
+  --bg-slate-dark: #374151;
+  --bg-sky: #bee3f8;
+  --bg-pink: #fed7e2;
+  --fill-sky: #0694a2;
+  --fill-pink: #b83280;
+  --transition-duration: 0.3s;
+}
+
+.dark-mode {
+  --bg-light: #2a2a2a;
+  --bg-dark: #ffffff;
+  --bg-slate-light: #374151;
+  --bg-slate-dark: #f1f5f9;
+}
+
+.container {
+  background-color: var(--bg-light);
+  border-radius: 0.75rem; /* 12px */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  gap: 0.75rem; /* 12px */
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  border: 1px solid transparent; /* Adjust based on preference */
+}
+
+.container .input-trigger,
+.container .icon-wrapper {
+  
+  background-color: var(--bg-slate-light);
+  transition: background-color var(--transition-duration) ease, 
+              transform var(--transition-duration) ease;
+  border-radius: 0.5rem; /* 8px */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.container .input-trigger:hover,
+.container .icon-wrapper:hover {
+  background-color: var(--bg-slate-dark);
+  transform: translateY(-2px); /* subtle lift effect */
+  width: 635px;
+}
+
+.container .icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor; /* Ensures SVG icons inherit text color */
+  
+}
+
+.bg-sky .icon-wrapper {
+  background-color: var(--bg-sky);
+}
+
+.bg-pink .icon-wrapper {
+  background-color: var(--bg-pink);
+}
+
+.fill-sky svg {
+  color: var(--fill-sky);
+}
+
+.fill-pink svg {
+  color: var(--fill-pink);
+}
+.page-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  padding: 20px; /* Provides some padding around the container */
+}
+
+.container {
+  /* Previous .container styles */
+  max-width: 766px; /* Adjust the max width as needed */
+  margin-top: -306px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem; /* 12px */
+  padding: 1rem;
+  display: flex;
+  gap: 0.75rem; /* 12px */
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  background-color: var(--bg-light);
+  border: 1px solid transparent; /* Adjust based on preference */
+  transition: all 0.3s ease;
+}
+
+/* Include the rest of your CSS here... */

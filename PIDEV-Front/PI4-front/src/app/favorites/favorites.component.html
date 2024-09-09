@@ -1,0 +1,29 @@
+<div class="container mt-5 pt-4 custom-container" *ngIf="filteredOffres && filteredOffres.length > 0">
+  <div class="row">
+    <div *ngFor="let favorite of filteredOffres" class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+      <div class="card border-0 custom-card">
+        <div class="card-body p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <h6>{{ favorite.title }}</h6> 
+            <button class="btn custom-button delete-btn" (click)="removeFromFavorites(favorite)" aria-label="Remove from favorites" title="Remove from favorites">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+          <div class="mt-2">
+            <span class="badge rounded-pill bg-primary">{{ favorite.contratType }}</span>
+            <span class="text-muted"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ favorite.location }}</span>
+          </div>
+          <hr>
+          <div>
+            <p><strong>Reference:</strong> {{ favorite.reference }}</p>
+            <p><strong>Description:</strong> {{ favorite.description }}</p>
+            <p><strong>Deadline:</strong> {{ favorite.deadline }}</p>
+            <p><strong>Skills:</strong> {{ favorite.skills }}</p>
+            <p><strong>Experience Level:</strong> {{ favorite.experienceLevel }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>

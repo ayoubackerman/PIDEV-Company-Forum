@@ -1,0 +1,115 @@
+.container {
+  margin-top: 15%; /* Use percentage for margin */
+  margin-bottom: 15%; /* Use percentage for margin */
+
+  max-width: 90%; /* Set maximum width to 100% */
+  height: auto; /* Set height to auto */
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#model1 {
+  margin-left: 5%; /* Use percentage for margin */
+  width: 80%; /* Use percentage for width */
+  height: auto; /* Set height to auto */
+  margin-top: 5%; /* Use percentage for margin */
+  position: relative;
+  animation: imgmove 1s ease;
+}
+#polygonH {
+  margin-left: 70%; /* Use percentage for margin */
+  margin-top: -145%; /* Use percentage for margin */
+  position: relative;
+  animation: recmove 2s infinite;
+}
+
+#rectangleH {
+  margin-left: 65%; /* Use percentage for margin */
+  margin-top: -130%; /* Use percentage for margin */
+  position: relative;
+  animation: recmove 3s infinite;
+}
+
+#eclipseH {
+  margin-left: 75%; /* Use percentage for margin */
+  margin-top: -120%; /* Use percentage for margin */
+  position: relative;
+  animation: recmove 4s infinite;
+}
+
+.btn-primary{
+  font-family: Arial Rounded MT;
+  width: 146px;
+  height: 50px;
+  background-color: red;
+  border: none;
+
+  font-size: 25px;
+}
+a{
+  text-decoration: none;
+  font-family: Arial Rounded MT;
+  color: black;
+  opacity: 50%;
+  font-size: 20px;
+  position: relative;
+  animation: formmove 1s ease;
+}
+
+input{
+  background-color:transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
+ 
+  color: white;
+  font-size: 24px;
+
+}
+
+form {
+  margin-top: 30%; /* Use percentage for margin */
+  margin-left: 5%; /* Use percentage for margin */
+  position: relative;
+  padding: 20px;
+  animation: formmove 1s ease;
+}
+@media (max-width: 1000px) {
+
+  #polygonH,
+  #rectangleH,
+  #eclipseH {
+     display: none; /* Remove left margin for smaller screens */
+  }
+
+
+}
+
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .container{
+      margin-top: 30%; /* Use percentage for margin */
+
+
+  }
+  #model1 {
+      width: 100%; /* Set width to 100% for smaller screens */
+      margin-left: 0; /* Remove left margin for smaller screens */
+  }
+
+  #polygonH,
+  #rectangleH,
+  #eclipseH {
+     display: none; /* Remove left margin for smaller screens */
+  }
+
+  form {
+      margin-left: 0; /* Remove left margin for smaller screens */
+  }
+}

@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="table-wrapper">
+        <h2 class="detail-title">Schedule an Interview</h2>
+    
+        <form [formGroup]="form" (ngSubmit)="submit()">
+
+            <div class="form-group" >
+                <label for="title">Title :</label>
+                <input type="text" id="title" formControlName="title" class="form-control" required>
+            </div>
+        
+            <div class="form-group" >
+                <label for="startDate">Start Date :</label>
+                <input type="datetime-local" id="startDate" formControlName="startDate" class="form-control" required>
+            </div>
+
+            <div class="form-group" >
+                <label for="endDate">End Date :</label>
+                <input type="datetime-local" id="endDate" formControlName="endDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Interview Type:</label>
+                <select formControlName="type" class="form-control">
+                    <option value="ONLINE">ONLINE</option>
+                    <option value="IN_PERSON">IN_PERSON</option>
+                  </select>
+            </div>
+        
+            <div class="form-group" *ngIf="form.get('type')!.value === 'ONLINE'">
+                <label for="location">Link :</label>
+                <input type="text" id="location" formControlName="location" class="form-control" required>
+            </div>
+            <div class="form-group" *ngIf="form.get('type')!.value === 'IN_PERSON'">
+                <label for="location">Room :</label>
+                <input type="text" id="location" formControlName="location" class="form-control" required>
+            </div>
+
+            <div class="form-button-group">
+                <button type="submit" class="btn btn-primary btn-block">
+                    Schedule
+                </button>     
+                
+            </div> 
+        </form>
+    </div>
+</div>
+
+
+  

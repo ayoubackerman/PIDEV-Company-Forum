@@ -1,0 +1,52 @@
+
+
+
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row justify-content-between">
+                    <div class="col-sm-6">
+                        <h2>Manage <b>Reclamations</b></h2>
+                    </div><button (click)="openPowerBIDashboard()"> Dashboard </button>
+                    <div class="col-sm-6 text-right">
+                        <a routerLink="/addreclamation"class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;
+                        </i> <span>Add New Reclamation</span></a>                  
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Type Reclamation</th>
+                        <th scope="col">Description</th>
+                     
+                     
+                        <th scope="col">status</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor =" let item of items">
+                        <td> {{item.type}} </td>
+                        <td> {{item.description}} </td>
+                        <td> {{item.status}} </td>
+                        <td> {{item.date| date:'dd-MM-yyyy' }} </td>
+                    
+                        <td>
+                            <a (click)="updateItem(item.codeReclamation)" class="edit" data-toggle="modal">
+                                <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                           
+                        </a>
+                        <a (click)="deleteItem(item.codeReclamation)" class="delete" data-toggle="modal" 
+                        title="Delete">
+                            <i class="material-icons" data-toggle="tooltip">&#xE872;</i>
+                            </a>
+                        </td>
+                    </tr>				
+                </tbody>
+            </table>
+        </div>
+    </div>

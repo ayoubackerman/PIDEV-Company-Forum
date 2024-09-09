@@ -1,0 +1,39 @@
+
+<div class="uk-modal-dialog tt relative overflow-hidden mx-auto bg-white p-7 shadow-xl rounded-lg md:w-[520px] w-full dark:bg-dark2">
+    <div class="text-center py-3 border-b -m-7 mb-0 dark:border-slate-700">
+      <h2 class="text-sm font-medium">Comment</h2>
+    </div>
+  <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+    <div id="form">
+    <div class="space-y-5 mt-7" >
+      
+      <div >
+        <input type="text" id="inputText" class="w-full mt-3"  matInput formControlName="codepost" placeholder="codepost">
+        <mat-error *ngIf="commentForm.get('codepost')?.hasError('required')">
+            This input required!
+          </mat-error>
+      </div>
+   
+      <div >
+        <input type="text" id="inputText" class="w-full mt-3"  matInput formControlName="comment" placeholder="comment">
+        <mat-error *ngIf="commentForm.get('comment')?.hasError('required')">
+            This input required!
+          </mat-error>
+      </div>
+   
+     
+      <div>
+      </div>
+  
+      <div class="flex justify-between items-center">
+        
+        <button  class="button bg-blue-500 text-white px-8" type="submit" >Create</button>
+      </div>
+    </div>
+  </div>
+  </form>
+  </div>
+
+
+
+  

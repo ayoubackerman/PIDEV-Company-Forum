@@ -1,0 +1,9 @@
+<div>
+    <h2>Chat Room</h2>
+    <ul>
+      <li *ngFor="let message of messages">{{ message.sender }}: {{ message.content }}</li>
+    </ul>
+    <input type="text" [(ngModel)]="message" placeholder="Type a message...">
+    <button (click)="sendMessage()">Send</button>
+  </div>
+  

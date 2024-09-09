@@ -1,0 +1,155 @@
+body {
+    color: #343a40; /* Darkened for better contrast */
+
+    backdrop-filter: blur(19px);    font-family: 'Varela Round', sans-serif;
+    font-size: 13px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+.action-button {
+    display: inline-block;
+    background-color: red; /* Blue color for the button */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 5px 10px; /* Padding for the button content */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+.action-button img {
+    vertical-align: middle; /* Align the image vertically in the button */
+    margin-right: 5px; /* Add some space between the image and text */
+}
+
+
+.table-wrapper {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: #fff;
+    padding: 15px 20px; /* Adjusted padding for more space */
+    margin: 150px auto; /* Centered table-wrapper for better focus */
+    border-radius: 8px; /* Softened border-radius for a modern look */
+    box-shadow: 0 4px 8px rgba(0,0,0,.1); /* Updated shadow for subtlety */
+}
+
+.table-title {
+    padding-bottom: 15px;
+    background: red; /* Changed to red */
+    color: #fff;
+    padding: 12px 30px; /* Slightly reduced padding for tighter header */
+    margin: -20px -20px 15px; /* Adjusted margins for alignment */
+    border-radius: 8px 8px 0 0; /* Aligning border-radius with .table-wrapper */
+}
+
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 22px; /* Slightly reduced for balance */
+}
+
+.table-title .btn-group {
+    float: right;
+}
+
+.table-title .btn {
+    color: #fff;
+    background: #666; /* Neutral color for secondary buttons */
+    font-size: 12px;
+    border-radius: 5px; /* Modernized button corners */
+    margin-left: 10px;
+}
+
+.table-title .btn i {
+    float: left;
+    font-size: 20px; /* Adjusted for icon size balance */
+    margin-right: 5px;
+}
+
+.table-title .btn span {
+    float: left;
+    margin-top: 2px;
+}
+
+/* Enhancement for hover effects on buttons, transitioning from neutral to red */
+.table-title .btn:hover {
+    background: #dc3545; /* Matching theme color */
+    border-color: #dc3545;
+}
+
+table.table {
+    width: 100%; /* Ensured full width for responsiveness */
+}
+
+table.table tr th, table.table tr td {
+    padding: 12px 10px; /* Adjusted for mobile */
+    vertical-align: middle;
+}
+
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+
+table.table th i, table.table td i {
+    font-size: 18px; /* Scaled down for harmony */
+    margin: 0 5px;
+}
+
+table.table td a {
+    color: #dc3545; /* Calls to action in red for emphasis */
+    text-decoration: none;
+}
+
+.pagination {
+    float: right;
+    margin: 20px 0;
+}
+
+.pagination li a {
+    color: #dc3545; /* Red theme for pagination highlights */
+}
+
+/* Styles for the delete button */
+.edit-delete-button {
+    padding: 6px 12px;
+    text-decoration: none;
+    color: black; /* Set text color */
+    background-color: transparent; /* Remove background color */
+    border: none; /* Remove border */
+    transition: all 0.3s ease; /* Add transition effect */
+}
+
+/* Hover effect for the delete button */
+.edit-delete-button:hover {
+    color: #d9534f; /* Change text color on hover */
+}
+
+/* Styles for the delete button icon */
+.edit-delete-button i {
+    font-size: 18px; /* Adjust icon size */
+    vertical-align: middle; /* Align icon vertically */
+    margin-right: 5px; /* Add some space between icon and text */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .table-wrapper {
+        margin: 100px 5%; /* Reduced margin with percentage for screen adaptation */
+        padding: 10px; /* Less padding on small screens for more space */
+    }
+    .table-title h2 {
+        font-size: 20px; /* Size down for small screens */
+    }
+    .table-title .btn {
+        padding: 5px 10px; /* Smaller buttons */
+        font-size: 11px; /* Smaller text */
+    }
+    .modal .modal-dialog {
+        width: 90%; /* More screen width usage */
+    }
+    .modal .form-control, .modal textarea.form-control {
+        font-size: 14px; /* Readability on small screens */
+    }
+}

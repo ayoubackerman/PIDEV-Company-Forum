@@ -1,0 +1,45 @@
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+            <h2>RESERVATION  <b>LIST</b></h2>
+          </div>
+                    <div class="col-sm-6 text-right"> <!-- Alignement à droite -->
+
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+            <tr>
+                
+                <th>Exposant Name</th>
+                <th>Pack</th>
+                <th>Stand num</th>
+                <th>Session</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let ress of items">
+                <td>{{ ress.ExposantName }}</td>
+                <td>{{ ress.pack }}</td>
+                <td>{{ ress.standNum }}</td>
+                <td>{{ ress.sessionId }}</td>
+                <td>{{ ress.price }}</td>
+                <td>
+
+                </td>
+                <td>
+
+                    <button (click)="deleteItem(ress.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                    <!-- Add Auction button -->
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    </body>

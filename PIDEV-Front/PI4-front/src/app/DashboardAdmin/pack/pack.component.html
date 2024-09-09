@@ -1,0 +1,42 @@
+
+
+<div class="container">
+  <div class="table-wrapper">
+      <h2 class="detail-title">Add a Pack</h2>
+  
+      <form [formGroup]="packForm" (submit)="addItem()" class="pack-form">
+        <div class="container form-container">
+    
+    
+
+          <div class="form-group">
+            <label for="packType">Type de Pack</label>
+            <select formControlName="packType" id="packType" name="packType" class="form-control">
+              <option *ngFor="let type of packTypes" [value]="type">{{ type }}</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+          <label for="pricePack">Prix du Pack</label>
+          <input type="number" formControlName="pricePack" id="pricePack" name="pricePack" placeholder="Prix du pack" class="form-control">
+         
+        </div>
+  
+
+  
+
+
+    
+          <div class="form-button-group">
+            <button type="submit" class="btn btn-danger btn-block">
+                <i class="fa fa-plus-circle"></i> Ajouter
+            </button>     
+           
+        </div> 
+         
+        </div>
+      
+      </form>
+      <router-outlet></router-outlet>
+  </div>
+</div>

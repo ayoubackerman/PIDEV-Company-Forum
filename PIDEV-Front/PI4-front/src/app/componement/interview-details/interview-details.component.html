@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="table-wrapper">
+      <h2 class="detail-title">Interview Details</h2>
+    
+      <div class="detail-group">
+        <label>Title:</label>
+        <p>{{ interview?.title }}</p>
+      </div>
+      
+      <div class="detail-group">
+        <label>Interview Type:</label>
+        <p>{{ interview?.type }}</p>
+      </div>
+      
+      <div class="detail-group">
+        <label>Location:</label>
+        <p>{{ interview?.location }}</p>
+        <a *ngIf="interview" type="button" class="btn btn-success btn-block float-right mt-3"
+                (click)="navigateToMeetingOrMap()">
+          <ng-container *ngIf="interview.type === 'ONLINE'">Open Meeting</ng-container>
+          <ng-container *ngIf="interview.type === 'IN_PERSON'">Open Map</ng-container>
+      </a>
+      </div>
+  
+      <div class="detail-group">
+        <label>Start Date:</label>
+        <p>{{ interview?.startDate }}</p>
+      </div>
+  
+      <div class="detail-group">
+        <label>End Date:</label>
+        <p>{{ interview?.endDate }}</p>
+      </div>
+      
+      <div class="form-button-group">
+        <button type="button" class="btn btn-primary btn-block float-right" (click)="cancelAdd()">
+          <i class="fa fa-reply"></i> Back
+        </button>
+        
+        
+      </div>
+    </div>
+  </div>
+  
